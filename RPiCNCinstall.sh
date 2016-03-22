@@ -1,20 +1,20 @@
 #update OS scripts/001-install-updates.sh
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 
 #install utilities scripts/002-install-utilities.sh
-sudo apt-get -y install minicom
-sudo apt-get -y install CuteCom
+sudo apt-get install -y minicom
+sudo apt-get install -y CuteCom
 #remote desktop
-sudo apt-get -y install xrdp
+sudo apt-get install -y xrdp
 
 #install bCNC scripts/003-install-bCNC.sh
 #per https://github.com/vlachoudis/bCNC/wiki/OS
 #python --version  (need 2.7)
-sudo apt-get -y install python-pip
+sudo apt-get install -y python-pip
 sudo pip install pyserial --upgrade
-sudo apt-get -y install python python-serial python-tk python-pmw python-imaging
+sudo apt-get install -y python python-serial python-tk python-pmw python-imaging
 git clone https://github.com/vlachoudis/bCNC.git bCNC
 echo "[Desktop Entry]" > ~/Desktop/bCNC.desktop
 echo "Version=1.0" >> ~/Desktop/bCNC.desktop
@@ -29,9 +29,9 @@ echo "Name[en_US]=bCNC" >> ~/Desktop/bCNC.desktop
 chmod 755 ~/Desktop/bCNC.desktop
 
 #install nodejs scripts/004-install-node.sh
-sudo apt-get -y remove nodejs
+sudo apt-get remove -y nodejs
 curl -sLS https://apt.adafruit.com/add | sudo bash
-sudo apt-get -y install node
+sudo apt-get install -y node
 
 #install cncjs scripts/005-install-cncjs.sh
 #from https://recordnotfound.com/cnc-js-cheton-71448
@@ -59,7 +59,7 @@ chmod 755 ~/Desktop/cncjs.desktop
 #cp -a shortcuts/. ~/Desktop
 
 ##install laserweb  ---did not test---
-#sudo apt-get -y install build-essential python g++ make
+#sudo apt-get install -y build-essential python g++ make
 #cd ~
 #sudo git clone https://github.com/openhardwarecoza/LaserWeb.git
 #cd LaserWeb
