@@ -1,3 +1,4 @@
+#!/bin/bash
 #update OS scripts/001-install-updates.sh
 sudo apt-get update -y
 sudo apt-get upgrade -y
